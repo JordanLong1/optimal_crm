@@ -13,11 +13,23 @@
 ActiveRecord::Schema.define(version: 2020_04_22_042212) do
 
   create_table "leads", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone_number"
+    t.boolean "customer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.string "revenue"
+    t.string "country"
+    t.string "city"
+    t.string "state"
+    t.string "address"
+    t.integer "user_id"
+    t.boolean "customer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,6 +43,9 @@ ActiveRecord::Schema.define(version: 2020_04_22_042212) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
