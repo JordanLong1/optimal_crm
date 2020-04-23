@@ -4,8 +4,8 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.string :title 
       t.string :content 
       t.boolean :complete
-      t.datetime :created_at 
-      t.datetime :updated_at 
+      # t.datetime :created_at 
+      # t.datetime :updated_at 
       t.timestamps
     end
   end
