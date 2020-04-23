@@ -1,5 +1,5 @@
 class Salesrepresentative < ApplicationRecord
     has_many :tasks 
-    has_many :organizations 
-    has_many :leads, through: :organizations 
+    has_many :leads
+    has_many :organizations, through: :leads
 end
