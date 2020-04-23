@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :leads, only: [:new, :create, :show, :edit, :destroy]
   end
 
+  resources :leads
   resources :tasks
   
 
