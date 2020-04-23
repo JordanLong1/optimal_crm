@@ -1,5 +1,5 @@
 class Organization < ApplicationRecord
 
-    belongs_ to :salesrepresentative 
-    has_many :leads 
+    has_many :leads
+    has_many :salesrepresentative, through: :leads
 end
