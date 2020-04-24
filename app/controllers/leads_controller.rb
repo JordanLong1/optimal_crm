@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
     end
     
     def create 
-        @lead = Lead.new(task_params)
+        @lead = Lead.new(lead_params)
         @lead.save
         render :new
     end
@@ -30,7 +30,7 @@ class LeadsController < ApplicationController
     end
 
     def find_and_set_lead
-        @lead = Lead.find_by(id :params[:id])
+        @lead = Lead.find_by(id: :params[:id])
     end
 
 
