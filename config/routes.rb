@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resources :salesrepresentatives, only: [:new, :create, :show]
 
   resources :organizations do 
-    resources :leads, only: [:new, :create, :show, :edit, :destroy]
+    resources :leads, only: [:create, :show, :edit, :destroy]
   end
 
-  resources :leads
+  resources :leads, only: [:new]
   resources :tasks
   
 
