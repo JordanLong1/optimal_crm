@@ -30,7 +30,7 @@ class TasksController < ApplicationController
     end
 
     def find_and_set_task
-        @task = Task.find_by(id :params[:id])
+        @task = Task.find_by(id: :params[:id])
     end
 
 
