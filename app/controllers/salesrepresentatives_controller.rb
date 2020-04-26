@@ -15,14 +15,14 @@ class SalesrepresentativesController < ApplicationController
     def create 
         @salesrep = Salesrepresentative.new(salesrepresentative_params)
         @salesrep.save
-        render :new
+        redirect_to salesrepresentative_path(@salesrep)
     end
 
 
     private 
 
     def salesrepresentative_params
-        params.require(:salesrepresentative).permit(:name, :email, :password_digest)
+        params.require(:salesrepresentative).permit(:name, :email, :password, :password_confirmation)
  
     end
 end
