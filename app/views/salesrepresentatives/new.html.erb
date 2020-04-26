@@ -1,11 +1,43 @@
+<h1>Welcome SalesRep! Sign-up below:</h1>
+
+  <% if @salesrep.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@salesrep.errors.count, "error") %> prohibited
+        this salesrep from being saved:
+      </h2>
+      <ul>
+        <% @salesrep.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <%= form_for(@salesrep) do |f|%>
 
-<%= f.label :name %><br>
-<%= f.text_field :name %><br>
-<%= f.label :email %><br>
-<%f.text_field :email %><br>
-<%= f.label "Please enter a password"%><br>
-<%= f.text_field :password_digest %><br>
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br>
+
+<%= f.label :email %>
+<br>
+<%= f.email_field :email %>
+<br>
+
+<%= f.label "Please enter a password"%>
+<br>
+<%= f.password_field :password %>
+<br>
+
+
+<%= f.label "Please re-enter a password"%>
+<br>
+<%= f.password_field :password_confirmation %>
+<br>
+
+
 
 <%=f.submit "Submit Sign up Information:" %>
 
