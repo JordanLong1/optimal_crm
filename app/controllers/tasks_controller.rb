@@ -11,6 +11,10 @@ class TasksController < ApplicationController
     def new 
         @task = Salesrepresentative.new 
     end
+
+    def edit 
+
+    end
     
     def create 
         @task = Task.new(task_params)
@@ -18,9 +22,15 @@ class TasksController < ApplicationController
         render :new
     end
 
-    def show 
-        @task = Task.find_by(id: params[:id])
+    def update 
+
     end
+
+    def destroy 
+        
+    end
+
+
 
     private 
 
