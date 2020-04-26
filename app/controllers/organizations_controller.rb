@@ -11,6 +11,10 @@ class OrganizationsController < ApplicationController
     def new 
         @organization = Organization.new 
     end
+
+    def edit
+
+    end
     
     def create 
         @organization = Organization.new(organization_params)
@@ -18,9 +22,14 @@ class OrganizationsController < ApplicationController
         render :new
     end
 
-    def show 
-        @organization = Organization.find_by(id: params[:id])
+    def update 
+
     end
+
+    def destroy
+        
+    end
+
 
     private 
 
