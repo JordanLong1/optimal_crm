@@ -11,6 +11,10 @@ class LeadsController < ApplicationController
     def new 
         @lead = Lead.new 
     end
+
+    def edit 
+
+    end
     
     def create 
         @lead = Lead.new(lead_params)
@@ -18,9 +22,14 @@ class LeadsController < ApplicationController
         render :new
     end
 
-    def show 
-        @lead = Lead.find_by(id: params[:id])
+    def update 
+
     end
+
+    def destroy 
+        
+    end
+ 
 
     private 
 
