@@ -1,7 +1,7 @@
 class LeadsController < ApplicationController 
 
     def index 
-        @teads = Lead.all 
+        @leads = Lead.all 
     end
 
     def show 
@@ -19,7 +19,7 @@ class LeadsController < ApplicationController
     def create 
         @lead = Lead.new(lead_params)
         @lead.save
-        render :new
+        redirect_to lead_path(@lead)
     end
 
     def update 
@@ -27,13 +27,13 @@ class LeadsController < ApplicationController
     end
 
     def destroy 
-        
+
     end
  
 
     private 
 
-    def task_params
+    def lead_params
         params.require(:lead).permit(:name, :email, :phone_number, :customer)
  
     end

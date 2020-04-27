@@ -1,0 +1,27 @@
+<h1>Fill out form below to add a lead</h1>
+
+
+
+<%= form_for(@lead) do |f|%>
+
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br>
+
+<%= f.label :email %>
+<br>
+<%= f.email_field :email %>
+<br>
+
+<%= f.label "Number of contact"%>
+<br>
+<%= f.text_field :phone_number %>
+<br>
+<%=f.label "Select if this person is a customer or not"%>
+<br>
+  <%= f.collection_select :organization_id, Organization.order(:name),:id,:name, include_blank: true %>
+<br>
+<%=f.submit "Submit Sign up Information:" %>
+
+<% end %>

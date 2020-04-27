@@ -1,3 +1,6 @@
-<h1>hello im working</h1>
+<h1> Welcome <%=@salesrep.name %> </h1>
 
-<% links? %>
+<label>Below is a link to all of your leads: </label>
+<br>
+<%= link_to @salesrep.leads %>
+

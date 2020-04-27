@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     end
 
     def edit 
-
+        find_and_set_task
     end
     
     def create 
@@ -23,11 +23,13 @@ class TasksController < ApplicationController
     end
 
     def update 
-
+        find_and_set_task
+        @task = Task.update(task_params)
+        redirect_to task_path(@task)
     end
 
     def destroy 
-        
+
     end
 
 
