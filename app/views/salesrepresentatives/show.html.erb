@@ -1,6 +1,9 @@
-<h1> Welcome <%=@salesrep.name %> </h1>
+<h1> Welcome to Optimal CRM <%=@salesrep.name %> </h1>
 
 <label>Below is a link to all of your leads: </label>
 <br>
-<%= link_to @salesrep.leads %>
+
+<label>Click here to add a new lead: <%= link_to "Add a new lead", new_salesrepresentative_lead_path(@salesrep) %> </label>
+<br>
+<label> Click here to view all of your leads:<%= link_to "All of your leads", salesrepresentative_leads_path(@salesrep) %> </label>
 
