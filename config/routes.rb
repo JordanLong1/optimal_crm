@@ -2,14 +2,18 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "static#home"
 
-    resources :salesrepresentatives, only: [:new, :create, :show]
+    resources :salesrepresentatives, only: [:new, :create, :show] do 
+      resources :leads, only: [:new, :index]
+    end
 
   resources :organizations do 
-    resources :leads, only: [:create, :show, :edit, :destroy]
+    resources :leads, only: [:edit, :destroy]
   end
 
-  resources :leads, only: [:new]
+  resources :leads, only: [:show, :create]
   resources :tasks
+
+  resources :sessions, only: [:new, :create, :destroy]
   
 
 end
