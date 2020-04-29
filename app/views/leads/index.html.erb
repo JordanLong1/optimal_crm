@@ -1,0 +1,9 @@
+
+<ul>
+<%= @leads.each do |lead| %>
+    <li> <%= lead.name %> </li>
+     <li> <%= lead.email %> </li>
+      <li> <%= lead.phone_number %> </li>
+       <li> <%= lead.customer%> </li>
+<% end %>   
+</ul>
