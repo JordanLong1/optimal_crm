@@ -4,6 +4,8 @@
 
 <%= form_for(@lead) do |f|%>
 
+<%= f.hidden_field :salesrepresentative_id, value: @lead.salesrepresentative%>
+<%#= f.collection_select :salesrepresentative_id, Salesrepresentative.all, :id, :name %>
 <%= f.label :name %>
 <br>
 <%= f.text_field :name %>
@@ -18,10 +20,12 @@
 <br>
 <%= f.text_field :phone_number %>
 <br>
-<%=f.label "Select if this person is a customer or not"%>
+<%=f.label "Is this lead a customer?"%>
 <br>
-  <%= f.collection_select :organization_id, Organization.order(:name),:id,:name, include_blank: true %>
+  <%= f.select(:customer, [["Yes", true], ["No", false]])  %>
 <br>
-<%=f.submit "Submit Sign up Information:" %>
+
+<%=f.submit "Submit Lead Information:" %>
 
 <% end %>
+
