@@ -16,12 +16,11 @@
 
 <%= form_for(@salesrep) do |f|%>
 
-<%= f.label :name %>
-<br>
-<%= f.text_field :name %>
+<%= f.label "Name:" %>
+<%=  f.text_field :name %>
 <br>
 
-<%= f.label :email %>
+<%= f.label "Please enter valid email address:" %>
 <br>
 <%= f.email_field :email %>
 <br>
