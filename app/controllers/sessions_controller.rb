@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
     end
 
     def destroy 
-
+        session.delete :session_id
     end
 end
