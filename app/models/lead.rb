@@ -1,5 +1,5 @@
 class Lead < ApplicationRecord
     
-     belongs_to :organization
-    belongs_to :salesrepresentative
+     belongs_to :organization, optional: true 
+    belongs_to :salesrepresentative, optional: true
 end
