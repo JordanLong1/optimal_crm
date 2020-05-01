@@ -2,8 +2,12 @@
 <ul>
 <%= @leads.each do |lead| %>
     <li> <%= lead.name %> </li>
+    <br>
      <li> <%= lead.email %> </li>
+     <br>
       <li> <%= lead.phone_number %> </li>
+      <br>
        <li> <%= lead.customer%> </li>
+       <br>
 <% end %>   
 </ul>
