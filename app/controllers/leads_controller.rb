@@ -26,7 +26,7 @@ class LeadsController < ApplicationController
 
     def update 
         find_and_set_lead
-        @lead.update(name: params[:lead][:name], email: params[:lead][:email], phone_number: params[:lead][:phone_number], customer: params[:lead][:customer])
+        @lead.update(lead_params)
         redirect_to lead_path(@lead)
     end
 
