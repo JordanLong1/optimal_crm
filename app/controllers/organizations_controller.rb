@@ -13,21 +13,27 @@ class OrganizationsController < ApplicationController
     end
 
     def edit
+        find_and_set_organization
 
     end
     
     def create 
         @organization = Organization.new(organization_params)
         @organization.save
-        render :new
+        redirect_to organization_path(@organization)
     end
 
     def update 
+        find_and_set_organization
+        @organization.update(organization_params)
+        redirect_to organization_path(@organization)
 
     end
 
     def destroy
-        
+        find_and_set_organization
+        @organization.destroy 
+        redirect_to new_organization_path(@organization)
     end
 
 
