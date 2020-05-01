@@ -4,7 +4,7 @@
 
 <%= form_for(@lead) do |f|%>
 
-<%= f.hidden_field :salesrepresentative_id, value: @lead.salesrepresentative%>
+<%= f.hidden_field :salesrepresentative_id, value: @lead.salesrepresentative.id%>
 <%#= f.collection_select :salesrepresentative_id, Salesrepresentative.all, :id, :name %>
 <%= f.label :name %>
 <br>
