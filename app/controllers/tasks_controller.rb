@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     def create 
         @task = Task.new(task_params)
         @task.save
-        render :new
+        redirect_to task_path(@task)
     end
 
     def update 
@@ -29,7 +29,9 @@ class TasksController < ApplicationController
     end
 
     def destroy 
-
+        find_and_set_task 
+        @task.destroy 
+        redirect_to task_path(@task)
     end
 
 
