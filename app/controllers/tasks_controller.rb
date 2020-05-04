@@ -9,7 +9,12 @@ class TasksController < ApplicationController
     end
 
     def new 
-        @task = Salesrepresentative.new 
+        salesrep = Salesrepresentative.find_by(id: params[:salesrepresentative_id]) 
+        if salesrep
+            @task = salesrep.tasks.build
+        else
+              redirect_to root_path # flash an alert?
+        end
     end
 
     def edit 
@@ -39,12 +44,12 @@ class TasksController < ApplicationController
     private 
 
     def task_params
-        params.require(:task).permit(:title, :content, :complete)
+        params.require(:task).permit(:title, :content, :complete, :salesrepresentative_id)
  
     end
 
     def find_and_set_task
-        @task = Task.find_by(id: :params[:id])
+        @task = Task.find_by(id: params[:id])
     end
 
 
