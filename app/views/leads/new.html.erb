@@ -1,46 +1,5 @@
 <h1>Fill out form below to add a lead</h1>
 
 
-  <% if @lead.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@lead.errors.count, "error") %> prohibited
-        this lead from being saved:
-      </h2>
-      <ul>
-        <% @lead.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-<%= form_for(@lead) do |f|%>
-
-<%= f.hidden_field :salesrepresentative_id, value: @lead.salesrepresentative.id%>
-<%#= f.collection_select :salesrepresentative_id, Salesrepresentative.all, :id, :name %>
-<%= f.label :name %>
-<br>
-<%= f.text_field :name %>
-<br>
-
-<%= f.label :email %>
-<br>
-<%= f.email_field :email %>
-<br>
-
-<%= f.label "Number of contact"%>
-<br>
-<%= f.text_field :phone_number %>
-<br>
-<%=f.label "Is this lead a customer?"%>
-<br>
-  <%= f.select(:customer, [["Yes", true], ["No", false]])  %>
-<br>
-
-<%=f.submit "Submit Lead Information:" %>
-
-<% end %>
+ <%= render "form" %>
 

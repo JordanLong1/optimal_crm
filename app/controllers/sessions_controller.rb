@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
         @salesrep = Salesrepresentative.find_by(email: params[:salesrepresentative][:email])
             session[:salesrepresentative_id] = @salesrep.id 
             redirect_to salesrepresentative_path(@salesrep)
+            # FOR ELSE redirect_to new_session_path, alert: "User not found. Please try again."
+
     end
 
     def destroy 

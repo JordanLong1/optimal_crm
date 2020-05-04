@@ -1,0 +1,42 @@
+ <% if @lead.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@lead.errors.count, "error") %> prohibited
+        this lead from being saved:
+      </h2>
+      <ul>
+        <% @lead.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<br>
+    <%= form_for (@lead) do |f| %>
+        <%= f.hidden_field :salesrepresentative_id, value: @lead.salesrepresentative_id%>
+        <br>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br><br>
+
+        <%= f.label :email%>
+        <%= f.text_field :email %>
+
+        <br><br>
+
+        <%= f.label :phone_number%>
+        <%= f.text_field :phone_number %>
+
+        <br><br>
+
+        <%= f.label :customer%>
+        <%= f.text_field :customer%>
+
+        <br><br>
+
+        <%= f.submit "Submit"%>
+
+
+    <% end %>
