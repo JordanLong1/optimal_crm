@@ -13,6 +13,7 @@ class SalesrepresentativesController < ApplicationController
     end
     
     def create 
+        
         @salesrep = Salesrepresentative.new(salesrepresentative_params)
         @salesrep.save
         redirect_to salesrepresentative_path(@salesrep)
