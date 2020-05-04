@@ -1,12 +1,23 @@
 <h1> Welcome to Optimal CRM <%=@salesrep.name %> </h1>
+<br><br>
 
-<label>Below is a link to all of your leads: </label>
-<br>
+<h3> Below is a list of links, choose what you want to do. </h3>
+<br><br>
 
-<label>Click here to add a new lead: <%= link_to "Add a new lead", new_salesrepresentative_lead_path(@salesrep) %> </label>
-<br>
-<label> Click here to view all of your leads:<%= link_to "All of your leads", salesrepresentative_leads_path(@salesrep) %> </label>
+<label>Click here to add a new lead: <%= link_to "Add a new lead" , new_salesrepresentative_lead_path(@salesrep) %> </label>
+<br><br>
 
-<label>Click here to view your Organizations: </label>
+<label> Click here to view all of your leads: <%= link_to "All of your leads" , salesrepresentative_leads_path(@salesrep) %> </label>
+<br><br>
+
+<label> Click here to add a new task: <%= link_to "Add Task" , new_salesrepresentative_task_path(@salesrep) %> </label>
+<br><br>
+
+<label>Click here to add a new Organization: <%= link_to "New Organization", new_organization_path(@salesrep) %> </label>
+<br><br>
+
+<label>View all of your organizations: <%= link_to "Organizations", organizations_path(@salesrep) %> </label>
+
+
 
 
