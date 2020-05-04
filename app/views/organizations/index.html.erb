@@ -1,0 +1,35 @@
+<h1> Organizations </h1>
+
+
+<ul> 
+<% @organizations.each do |org| %>
+
+<h4><li> Name:</li> </h4>
+    <%= org.name %>
+<br><br>
+
+<h4><li> Amount of revenue:</li> </h4>
+<%= org.revenue %>
+<br><br>
+
+<h4><li> Country</li> </h4>
+<%= org.country %>
+<br><br>
+
+<h4><li> State:</li> </h4>
+<%= org.state %>
+<br><br>
+
+<h4><li> Address:</li> </h4>
+ <%= org.address %>
+<br><br>
+
+<h4><li> Customer:</li> </h4>
+ <%= org.customer %>
+<br><br>
+
+
+
+<% end %>
+
+</ul>

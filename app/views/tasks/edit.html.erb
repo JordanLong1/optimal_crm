@@ -1,4 +1,4 @@
-<h1>Add a new task:</h1>
+<h1>Edit a task:</h1>
 
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -30,6 +30,6 @@
   <%= f.select(:complete, [["Yes", true], ["No", false]]) %>
 <br>
 
-<%=f.submit "Add this task:" %>
+<%=f.submit "Submit updated information:" %>
 
 <% end %>

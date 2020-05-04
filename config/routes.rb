@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
     resources :salesrepresentatives, only: [:new, :create, :show] do 
       resources :leads, only: [:new, :index]
+      resources :tasks, only: [:new]
     end
 
   resources :organizations do 
