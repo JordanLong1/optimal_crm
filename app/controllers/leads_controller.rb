@@ -1,7 +1,12 @@
 class LeadsController < ApplicationController 
 
     def index 
+        if params[:salesrepresentative_id].present?
+            @salesrep = Salesrepresentative.find_by(id: params[:salesrepresentative_id])
+            @leads = @salesrep.leads
+        else
         @leads = Lead.all 
+        end
     end
 
     def show 
@@ -9,7 +14,12 @@ class LeadsController < ApplicationController
     end
 
     def new 
-        @lead = Lead.new(salesrepresentative_id: params[:salesrepresentative_id])
+        salesrep = Salesrepresentative.find_by(id: params[:salesrepresentative_id]) 
+        if salesrep
+            @lead = salesrep.leads.build
+        else
+              redirect_to root_path # flash an alert?
+        end
     end
 
     def edit 
