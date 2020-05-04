@@ -39,13 +39,13 @@ class OrganizationsController < ApplicationController
 
     private 
 
-    def task_params
+    def organization_params
         params.require(:organization).permit(:name, :revenue, :country, :city, :state, :address)
  
     end
 
     def find_and_set_organization
-        @organization = Organization.find_by(id: :params[:id])
+        @organization = Organization.find_by(id: params[:id])
     end
 
 
