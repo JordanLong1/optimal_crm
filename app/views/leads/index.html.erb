@@ -1,13 +1,28 @@
-
+<h1> List of leads </h1>
 <ul>
-<%= @leads.each do |lead| %>
-    <li> <%= lead.name %> </li>
-    <br>
-     <li> <%= lead.email %> </li>
-     <br>
-      <li> <%= lead.phone_number %> </li>
-      <br>
-       <li> <%= lead.customer%> </li>
+<% @leads.each do |lead| %>
+    <h4>
+         <li>Name:</li> 
+    </h4>
+    <%= lead.name %> 
+    <br><br>
+
+    <h4>
+        <li>Email:</li>
+      </h4>
+      <%= lead.email %>
+     <br><br>
+
+    <h4>
+        <li> Phone number:</li>
+        </h4>
+        <%= lead.phone_number %>
+      <br><br>
+
+        <h4>
+        <li> Customer? </li>
+        </h4>
+        <%= lead.customer%>
        <br>
 <% end %>   
 </ul>
