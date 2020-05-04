@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
     end
 
     def create 
-        @salesrep = Salesrepresentative.find_by(email: params[:Salesrepresentative][:email])
-            session[:id] = @salesrep.id 
+        @salesrep = Salesrepresentative.find_by(email: params[:salesrepresentative][:email])
+            session[:salesrepresentative_id] = @salesrep.id 
             redirect_to salesrepresentative_path(@salesrep)
     end
 
