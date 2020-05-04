@@ -6,10 +6,12 @@
         <ul class="nav pull-right">
             <li><%= link_to "Sign up", new_salesrepresentative_path %></li>
            <li><%= link_to "Log In", new_session_path %></li>
-          <li><%#= link_to "Home", salesrepresentative_path(current_user) %></li>
+          <li><%= link_to "Home", salesrepresentative_path(current_user) %></li>
 
           <li><%= link_to "Help",    '#' %></li>
           <li><%= link_to "Sign in", '#' %></li>
+          <li><%= link_to "Log Out", session_path(:salesrepresentative_id), method: :delete %></li>
+
         </ul>
       </nav>
     </div>
