@@ -5,6 +5,7 @@ class Salesrepresentative < ApplicationRecord
     has_many :leads
     has_many :organizations, through: :leads
 
-    validates :name, :email, :password, presence: true 
+    validates :name, :email, :password, presence: true
+    validates :email, uniqueness: true 
 
 end
