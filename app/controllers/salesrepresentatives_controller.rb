@@ -1,5 +1,8 @@
 class SalesrepresentativesController < ApplicationController 
 
+    # before_action :require_login
+    # skip_before_action :require_login, only: [:index]
+
     def index 
         @salesreps = Salesrepresentative.all
     end
