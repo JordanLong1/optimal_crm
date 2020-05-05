@@ -5,5 +5,5 @@ class Organization < ApplicationRecord
 
 
     validates :name, presence: true 
-    validates :name, uniqueness: true 
+    validates :name, :address, uniqueness: true 
 end
