@@ -18,8 +18,13 @@ class SalesrepresentativesController < ApplicationController
     def create 
         
         @salesrep = Salesrepresentative.new(salesrepresentative_params)
-        @salesrep.save
+
+       if @salesrep.save
+        session[:salesrepresentative_id] = @salesrep.id
         redirect_to salesrepresentative_path(@salesrep)
+       else  
+        render :new
+       end
     end
 
 
