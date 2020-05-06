@@ -34,7 +34,9 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '4.0.0'
 
 gem 'omniauth'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
+
+gem 'dotenv-rails'
 
 
 

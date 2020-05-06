@@ -19,14 +19,20 @@ class OrganizationsController < ApplicationController
     
     def create 
         @organization = Organization.new(organization_params)
-        @organization.save
+       if @organization.save
         redirect_to organization_path(@organization)
+       else  
+        render 'new'
+       end
     end
 
     def update 
         find_and_set_organization
-        @organization.update(organization_params)
+        if @organization.update(organization_params)
         redirect_to organization_path(@organization)
+        else  
+            render 'edit'
+        end
 
     end
 

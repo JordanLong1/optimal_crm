@@ -28,16 +28,20 @@ class LeadsController < ApplicationController
     
     def create 
         @lead = Lead.new(lead_params)
-        @lead.save
-        redirect_to lead_path(@lead)
-
-    
+        if @lead.save
+            redirect_to lead_path(@lead) 
+        else 
+            render 'new'
+        end
     end
 
     def update 
         find_and_set_lead
-        @lead.update(lead_params)
+       if @lead.update(lead_params)
         redirect_to lead_path(@lead)
+       else 
+        render 'edit'
+       end
     end
 
     def destroy 

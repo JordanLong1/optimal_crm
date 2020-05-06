@@ -23,7 +23,7 @@ class SalesrepresentativesController < ApplicationController
         session[:salesrepresentative_id] = @salesrep.id
         redirect_to salesrepresentative_path(@salesrep)
        else  
-        render :new
+        render 'new'
        end
     end
 
