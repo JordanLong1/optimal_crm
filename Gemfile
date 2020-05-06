@@ -33,6 +33,8 @@ gem 'sass-rails', '>= 6'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '4.0.0'
 
+gem 'omniauth'
+gem 'omniauth-google'
 
 
 
