@@ -32,6 +32,6 @@ no
 
 <%= @lead.salesrepresentative.name %>
 
-<h4>No longer a lead? </h4><%= link_to "Delete lead", organization_lead_path(@lead), method: :delete, data: { confirm: "Really?" }%>
+<h4>No longer a lead? </h4><%= link_to "Delete lead", lead_path(@lead), method: :delete, data: { confirm: "Really?" }%>
 <br><br>
 <h4>Made a mistake? </h4><%= link_to "Edit Lead", edit_lead_path(@lead)%>

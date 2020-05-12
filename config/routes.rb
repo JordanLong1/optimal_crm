@@ -8,11 +8,9 @@ Rails.application.routes.draw do
       resources :tasks, only: [:new]
     end
 
-  resources :organizations do 
-    resources :leads, only: [:destroy]
-  end
+  resources :organizations 
 
-  resources :leads, only: [:show, :create, :edit, :update]
+  resources :leads, only: [:show, :create, :edit, :update, :destroy]
   resources :tasks
 
   resources :sessions, only: [:new, :create, :destroy]

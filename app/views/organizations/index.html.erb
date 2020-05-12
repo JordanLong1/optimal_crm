@@ -29,9 +29,12 @@
 <br><br>
 
 
-<%= link_to "edit", edit_organization_path(org) %>
+<%= link_to "Edit Organization", edit_organization_path(org) %>
 <br><br>
-<%= link_to "Delete Org", organization_path(@organization), method: :delete, data: { confirm: "Really?" }%>
+<%= link_to "Delete Organization", organization_path(org), method: :delete, data: { confirm: "Really?" }%>
+<br><br>
+<%= link_to "Add Organization", new_organization_path(org) %>
+
 <% end %>
 
 

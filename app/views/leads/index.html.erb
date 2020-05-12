@@ -23,6 +23,13 @@
         <li> Customer? </li>
         </h4>
         <%= lead.customer%>
-       <br>
+       <br><br>
+
+       <%= link_to "Edit Organization", edit_lead_path(lead) %>
+      <br><br>
+      <%= link_to "Delete Organization", lead_path(lead), method: :delete, data: { confirm: "Really?" }%>
+      <br><br>
+
+
 <% end %>   
 </ul>
