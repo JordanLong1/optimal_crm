@@ -1,6 +1,7 @@
 class LeadsController < ApplicationController 
 
     before_action :require_login
+    before_action :has_authorization, only: [:edit, :destroy]
     
     def index 
         if params[:salesrepresentative_id].present?
@@ -17,15 +18,16 @@ class LeadsController < ApplicationController
 
     def new 
         salesrep = Salesrepresentative.find_by(id: params[:salesrepresentative_id]) 
-        if salesrep
+
+        if salesrep && salesrep == helpers.current_user
             @lead = salesrep.leads.build
         else
-              redirect_to root_path # flash an alert?
+              redirect_to root_path, alert: "You are not authorized to add a new lead for this account."
         end
     end
 
     def edit 
-        find_and_set_lead
+        
     end
     
     def create 
@@ -47,11 +49,16 @@ class LeadsController < ApplicationController
     end
 
     def destroy 
-        find_and_set_lead
+    
     end
  
 
     private 
+
+    def has_authorization
+        find_and_set_lead
+        redirect_to salesrepresentative_path(helpers.current_user), alert: "You don't have access to this" unless helpers.current_user == @lead.salesrepresentative 
+    end
 
     def lead_params
         params.require(:lead).permit(:name, :email, :phone_number, :customer, :salesrepresentative_id, :organization_id)
