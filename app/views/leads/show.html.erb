@@ -15,10 +15,23 @@
 
 
 <h4> Already a customer? </h4>
-<%= @lead.customer %> 
+<% if @lead.customer == true %> 
+yes
+<% else %> 
+no
+<% end %> 
+
 <br> <br>
+
+<h4> Org </h4>
+<%= @lead.organization.name %>
+<br><br>
 
 
 
 
 <%= @lead.salesrepresentative.name %>
+
+<h4>No longer a lead? </h4><%= link_to "Delete lead", organization_lead_path(@lead), method: :delete, data: { confirm: "Really?" }%>
+<br><br>
+<h4>Made a mistake? </h4><%= link_to "Edit Lead", edit_lead_path(@lead)%>

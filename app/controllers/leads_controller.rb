@@ -1,5 +1,7 @@
 class LeadsController < ApplicationController 
 
+    before_action :require_login
+    
     def index 
         if params[:salesrepresentative_id].present?
             @salesrep = Salesrepresentative.find_by(id: params[:salesrepresentative_id])

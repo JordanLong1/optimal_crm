@@ -1,4 +1,6 @@
+require 'securerandom'
 class SessionsController < ApplicationController 
+
 
     def new 
         @salesrep = Salesrepresentative.new 
@@ -12,12 +14,29 @@ class SessionsController < ApplicationController
         else 
             redirect_to new_session_path, alert: "Couldn't find a user. Please try again"
         end 
-            # FOR ELSE redirect_to new_session_path, alert: "User not found. Please try again."
 
+    end
+
+    def omniauth
+        @salesrep = Salesrepresentative.find_or_create_by(email: auth[:info][:email]) do |u|
+            u.uid = auth['uid']
+            u.name = auth['info']['name']
+            u.password = SecureRandom.alphanumeric(10)
+          end
+       
+          session[:salesrepresentative_id] = @salesrep.id
+       
+          redirect_to salesrepresentative_path(@salesrep)
     end
 
     def destroy 
-        session.delete :session_id
+        session.delete :salesrepresentative_id
         redirect_to root_path
     end
+
+    private
+ 
+  def auth
+    request.env['omniauth.auth']
+  end
 end

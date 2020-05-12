@@ -1,6 +1,6 @@
 class SalesrepresentativesController < ApplicationController 
 
-    # before_action :require_login
+    before_action :require_login, only: [:index, :show]
     # skip_before_action :require_login, only: [:index]
 
     def index 
@@ -18,7 +18,6 @@ class SalesrepresentativesController < ApplicationController
     def create 
         
         @salesrep = Salesrepresentative.new(salesrepresentative_params)
-
        if @salesrep.save
         session[:salesrepresentative_id] = @salesrep.id
         redirect_to salesrepresentative_path(@salesrep)

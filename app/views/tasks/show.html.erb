@@ -1,0 +1,20 @@
+<h1> Task Details</h1>
+
+
+<h4> Name of task:</h4>
+ <%= @task.title %> 
+<br> <br>
+
+<h4> Content: </h4> 
+<%= @task.content %>
+<br> <br>
+
+<h4>Complete: </h4>
+ <%= @task.complete %>
+<br> <br>
+
+
+
+<h4>No longer a task? </h4><%= link_to "Delete task", task_path(@task), method: :delete, data: { confirm: "Really?" }%>
+<br><br>
+<h4>Made a mistake? </h4><%= link_to "Edit Task", edit_task_path(@task)%>

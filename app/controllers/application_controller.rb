@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
     private 
 
    
-    # def require_login
-    #   unless logged_in?
-    #     flash[:error] = "You must be logged in to access this section"
-    #     redirect_to new_login_url # halts request cycl
-    #   end
-    # end
+    def require_login
+      unless !!session[:salesrepresentative_id]
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to new_session_path
+      end
+    end
 
   
 end
