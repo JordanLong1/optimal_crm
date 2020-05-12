@@ -1,5 +1,6 @@
 class TasksController < ApplicationController 
     before_action :require_login
+    before_action :has_authorization, only: [:edit, :destroy]
 
 
     def index 
@@ -12,10 +13,10 @@ class TasksController < ApplicationController
 
     def new 
         salesrep = Salesrepresentative.find_by(id: params[:salesrepresentative_id]) 
-        if salesrep
+        if salesrep && salesrep == helpers.current_user
             @task = salesrep.tasks.build
         else
-              redirect_to root_path # flash an alert?
+              redirect_to root_path, alert: "You are not authorized to add a new lead for this account."
         end
     end
 
@@ -42,7 +43,6 @@ class TasksController < ApplicationController
     end
 
     def destroy 
-        find_and_set_task 
         @task.destroy 
         redirect_to task_path(@task)
     end
@@ -50,6 +50,11 @@ class TasksController < ApplicationController
 
 
     private 
+
+    def has_authorization
+        find_and_set_task
+        redirect_to salesrepresentative_path(helpers.current_user), alert: "You don't have access to this." unless helpers.current_user == @task.salesrepresentative
+    end
 
     def task_params
         params.require(:task).permit(:title, :content, :complete, :salesrepresentative_id)

@@ -49,6 +49,8 @@ class LeadsController < ApplicationController
     end
 
     def destroy 
+        @lead.destroy 
+        redirect_to lead_path(@lead)
     
     end
  

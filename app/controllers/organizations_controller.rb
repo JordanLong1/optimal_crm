@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController 
 
     before_action :require_login
+    before_action :is_authorized, only: [:edit, :destroy]
 
     def index 
         @organizations = Organization.all 
@@ -11,6 +12,7 @@ class OrganizationsController < ApplicationController
     end
 
     def new 
+        # binding.pry
         @organization = Organization.new 
     end
 
@@ -46,6 +48,11 @@ class OrganizationsController < ApplicationController
 
 
     private 
+
+    def is_authorized
+        find_and_set_organization
+        redirect_to salesrepresentative_path(helpers.current_user), alert: "You don't have access to change this information." unless helpers.current_user == @organization.salesrepresentatives.include?("#{helpers.current_user}")
+    end
 
     def organization_params
         params.require(:organization).permit(:name, :revenue, :country, :city, :state, :address)
