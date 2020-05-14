@@ -48,7 +48,8 @@ class OrganizationsController < ApplicationController
 
     def is_authorized
         find_and_set_organization
-        redirect_to salesrepresentative_path(helpers.current_user), alert: "You don't have access to change this information." unless helpers.current_user == @organization.salesrepresentatives.include?("#{helpers.current_user}")
+        # binding.pry
+        redirect_to salesrepresentative_path(helpers.current_user), alert: "You don't have access to change this information." unless @organization.salesrepresentatives.find_by(id: helpers.current_user.id)
     end
 
     def organization_params
