@@ -21,7 +21,7 @@ class TasksController < ApplicationController
     end
 
     def edit 
-        find_and_set_task
+        
     end
     
     def create 
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
     end
 
     def update 
-        find_and_set_task
+        
        if @task = Task.update(task_params)
         redirect_to task_path(@task)
        else 
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
     def destroy 
         @task.destroy 
-        redirect_to task_path(@task)
+        redirect_to salesrepresentative_path(helpers.current_user)
     end
 
 

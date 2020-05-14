@@ -1,6 +1,6 @@
 <h1> List of leads </h1>
 <ul>
-<% @leads.each do |lead| %>
+<%= @leads.each do |lead| %>
     <h4>
          <li>Name:</li> 
     </h4>
@@ -25,9 +25,9 @@
         <%= lead.customer%>
        <br><br>
 
-       <%= link_to "Edit Organization", edit_lead_path(lead) %>
+       <%= link_to "Edit lead", edit_lead_path(lead) %>
       <br><br>
-      <%= link_to "Delete Organization", lead_path(lead), method: :delete, data: { confirm: "Really?" }%>
+      <%= link_to "Delete lead", lead_path(lead), method: :delete, data: { confirm: "Really?" }%>
       <br><br>
 
 

@@ -10,7 +10,11 @@
 <br> <br>
 
 <h4>Complete: </h4>
- <%= @task.complete %>
+ <% if @task.complete == true %> 
+yes
+<% else %> 
+no
+<% end %> 
 <br> <br>
 
 

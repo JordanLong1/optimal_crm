@@ -17,8 +17,7 @@ class OrganizationsController < ApplicationController
     end
 
     def edit
-        find_and_set_organization
-
+        
     end
     
     def create 
@@ -31,7 +30,6 @@ class OrganizationsController < ApplicationController
     end
 
     def update 
-        find_and_set_organization
         if @organization.update(organization_params)
         redirect_to organization_path(@organization)
         else  
@@ -41,7 +39,6 @@ class OrganizationsController < ApplicationController
     end
 
     def destroy
-        find_and_set_organization
         @organization.destroy 
         redirect_to new_organization_path(@organization)
     end

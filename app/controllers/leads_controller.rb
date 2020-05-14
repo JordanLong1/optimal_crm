@@ -50,7 +50,8 @@ class LeadsController < ApplicationController
 
     def destroy 
         @lead.destroy 
-        redirect_to lead_path(@lead)
+        redirect_to salesrepresentative_path(helpers.current_user)
+
     
     end
  
