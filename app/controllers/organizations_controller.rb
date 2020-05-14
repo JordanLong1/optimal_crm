@@ -30,6 +30,7 @@ class OrganizationsController < ApplicationController
     end
 
     def update 
+        is_authorized
         if @organization.update(organization_params)
         redirect_to organization_path(@organization)
         else  
@@ -53,7 +54,7 @@ class OrganizationsController < ApplicationController
     end
 
     def organization_params
-        params.require(:organization).permit(:name, :revenue, :country, :city, :state, :address)
+        params.require(:organization).permit(:name, :revenue, :country, :city, :state, :address, :customer)
  
     end
 
