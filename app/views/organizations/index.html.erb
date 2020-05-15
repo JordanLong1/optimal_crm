@@ -4,16 +4,20 @@
 <%= link_to "Add Organization", new_organization_path(@organization) %>
 <br><br>
 
+<%# render @organizations.highest %>
 
 <ul> 
 <% @organizations.each do |org| %>
+
+
+
 
 <h4><li> Name:</li> </h4>
     <%= org.name %>
 <br><br>
 
 <h4><li> Amount of revenue:</li> </h4>
-<%= org.revenue %>
+<%= org.revenue %>,000
 <br><br>
 
 <h4><li> Country</li> </h4>

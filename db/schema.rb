@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_035154) do
+ActiveRecord::Schema.define(version: 2020_05_15_004522) do
 
   create_table "leads", force: :cascade do |t|
     t.string "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_035154) do
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
-    t.string "revenue"
+    t.integer "revenue"
     t.string "country"
     t.string "city"
     t.string "state"

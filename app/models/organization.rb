@@ -6,4 +6,9 @@ class Organization < ApplicationRecord
 
     validates :name, presence: true 
     validates :name, :address, uniqueness: true 
+
+    scope :highest, -> {Organization.order("revenue DESC").limit(3)} 
+
+
+
 end

@@ -4,7 +4,8 @@ class OrganizationsController < ApplicationController
     before_action :is_authorized, only: [:edit, :destroy]
 
     def index 
-        @organizations = Organization.all 
+        @organizations = Organization.highest
+
     end
 
     def show 
