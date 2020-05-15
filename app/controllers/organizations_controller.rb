@@ -5,7 +5,6 @@ class OrganizationsController < ApplicationController
 
     def index 
         @organizations = Organization.highest
-
     end
 
     def show 
@@ -13,7 +12,6 @@ class OrganizationsController < ApplicationController
     end
 
     def new 
-        # binding.pry
         @organization = Organization.new 
     end
 
@@ -50,7 +48,6 @@ class OrganizationsController < ApplicationController
 
     def is_authorized
         find_and_set_organization
-        # binding.pry
         redirect_to salesrepresentative_path(helpers.current_user), alert: "You don't have access to change this information." unless @organization.salesrepresentatives.find_by(id: helpers.current_user.id)
     end
 
