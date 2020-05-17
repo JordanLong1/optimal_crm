@@ -1,16 +1,6 @@
-<% if @organization.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@organization.errors.count, "error") %> prohibited
-        this salesrep from being saved:
-      </h2>
-      <ul>
-        <% @organization.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+    <%= render partial: "shared/errors", locals: {model: @organization} %>
+
 
 
 

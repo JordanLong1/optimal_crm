@@ -3,7 +3,7 @@
 /* universal */
 
 body {
-  background-color: #beb8b3;
+  background-color: #749adb;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 60px;
@@ -37,7 +37,7 @@ html {
   /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
+    line-height: 2;
   }
   
   h1 {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
-    // color: #ffffff;
+    color: #ffffff;
 
   }
   
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
-    color: #999;
+    color: #f5df7d;
   }
   
   p {
@@ -69,12 +69,12 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: #fc6603;
+    color: #f5df7d;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
     font-weight: bold;
-    line-height: 1;
+    line-height: 2;
   }
   
   #logo:hover {
@@ -92,11 +92,11 @@ footer {
   }
   
   footer a {
-    color: #555;
+    color: #ffffff;
   }
   
   footer a:hover {
-    color: #222;
+    color: #ffffff;
   }
   
   footer small {
@@ -112,3 +112,14 @@ footer {
     float: left;
     margin-left: 10px;
   }
+  // a:link {
+  //   color: #ffffff;
+  // }
+
+  a {
+    color: #FFF;
+  }
+  a:hover {
+     color: #FFF
+  }
+  

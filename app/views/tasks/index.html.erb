@@ -10,7 +10,18 @@
      <br><br>
 
         <li> Complete?</li>
-        <%= task.complete %>
+         <% if task.complete == true %> 
+        yes
+      <% else %> 
+        no
+        <% end %> 
       <br><br>
+
+  <%= link_to "Edit Task", edit_task_path(task) %>
+  <br><br>
+
+  <%= link_to "Delete Task", task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete?" }%>
+  <br><br>
+
 <% end %>   
 </ul>

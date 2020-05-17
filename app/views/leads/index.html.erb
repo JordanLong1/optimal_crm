@@ -1,6 +1,6 @@
 <h1> List of leads </h1>
 <ul>
-<%= @leads.each do |lead| %>
+<% @leads.each do |lead| %>
     <h4>
          <li>Name:</li> 
     </h4>
@@ -22,7 +22,11 @@
         <h4>
         <li> Customer? </li>
         </h4>
-        <%= lead.customer%>
+        <% if lead.customer == true %>
+        yes 
+        <% else %>
+        no 
+        <% end %>
        <br><br>
 
        <%= link_to "Edit lead", edit_lead_path(lead) %>

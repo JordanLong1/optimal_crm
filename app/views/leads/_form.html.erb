@@ -1,18 +1,8 @@
- <% if @lead.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@lead.errors.count, "error") %> prohibited
-        this lead from being saved:
-      </h2>
-      <ul>
-        <% @lead.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-<br>
+    <%= render partial: "shared/errors", locals: {model: @lead} %>
+
+
+
     <%= form_for (@lead) do |f| %>
         <%= f.hidden_field :salesrepresentative_id, value: @lead.salesrepresentative_id%>
         <br><br>

@@ -6,6 +6,7 @@
         <ul class="nav pull-right">
         <%if logged_in? %>
           <li><%= link_to "Home", salesrepresentative_path(current_user) %></li>
+          <li><%= link_to "Leads", salesrepresentative_leads_path(current_user) %></li>
           <li><%= link_to "Tasks", tasks_path %></li>
           <li><%= link_to "Organizations", organizations_path %></li>
           <li><%= link_to "Log Out", session_path(:salesrepresentative_id), method: :delete %></li>
