@@ -1,24 +1,26 @@
-# README
+This is a fake customer relationship management tool.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sales development representatives can do the following:
 
-Things you may want to cover:
+Create daily task lists for themselves
 
-* Ruby version
+Create tasks for those lists and assign the tasks to employees
 
-* System dependencies
+Add and edit a lead, organization, and task and assocaite which lead belongs to what salesrep and organization
 
-* Configuration
 
-* Database creation
+Getting Started
+After cloning this repo you can get started using the application for experimentation by:
 
-* Database initialization
+Running rails db:seed
 
-* How to run the test suite
+Starting a local server with rails s command
 
-* Services (job queues, cache servers, search engines, etc.)
+Navigating to localhost:3000
 
-* Deployment instructions
+Log in with a user created from the seed file, see db/seeds.rb file for login crendentials for one of the users or"
 
-* ...
+Create a new account by clicking on the sign up link in the nav bar
+
+Log in via google by clicking first on the login link in the nav bar and then clicking on the icon associated to the strategy you would like to log in with.
+
