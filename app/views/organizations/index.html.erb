@@ -1,52 +1,50 @@
-<h1> Organizations </h1>
+    <h1> Organizations </h1>
 
 
-<%= link_to "Add Organization", new_organization_path(@organization) %>
-<br><br>
+    <%= link_to "Add Organization", new_organization_path(@organization) %>
+    <br><br>
 
 
-<ul> 
-<% @organizations.each do |org| %>
+    <% @organizations.each do |org| %>
+    <ul style="list-style-position:inside; border-style: solid; border-width: 4px; border-radius: 15px; width: 300px; height: 550px; padding: 10px;" >  
+            <h4><li> Name:</li> </h4>
+             <%= org.name %> 
+    <br><br>
+
+    <h4><li> Amount of revenue:</li> </h4>
+         <%= org.revenue %>    
+    <br><br>
+
+    <h4><li> Country:</li> </h4>
+         <%= org.country %>    
+    <br><br>
+
+    <h4><li> State:</li> </h4>
+         <%= org.state %>  
+    <br><br>
+
+    <h4><li> Address:</li> </h4>
+         <%= org.address %>    
+    <br><br>
+
+    <h4><li> Customer:</li> </h4>
+         <% if org.customer == true %>     
+         yes
+        <% else %> 
+        no
+    <% end %> 
+
+    <br><br>
 
 
+     <%= link_to "Edit Organization", edit_organization_path(org) %>   
+    <br><br>
 
+     <%= link_to "Delete Organization", organization_path(org), method: :delete, data: { confirm: "Really?" }%>    
+    <br><br>
 
-<h4><li> Name:</li> </h4>
-    <%= org.name %>
-<br><br>
-
-<h4><li> Amount of revenue:</li> </h4>
-<%= org.revenue %>
-<br><br>
-
-<h4><li> Country</li> </h4>
-<%= org.country %>
-<br><br>
-
-<h4><li> State:</li> </h4>
-<%= org.state %>
-<br><br>
-
-<h4><li> Address:</li> </h4>
- <%= org.address %>
-<br><br>
-
-<h4><li> Customer:</li> </h4>
-<% if org.customer == true %> 
-yes
-<% else %> 
-no
-<% end %> 
-
-<br><br>
-
-
-<%= link_to "Edit Organization", edit_organization_path(org) %>
-<br><br>
-<%= link_to "Delete Organization", organization_path(org), method: :delete, data: { confirm: "Really?" }%>
-<br><br>
-
-<% end %>
-
-
+    <br><br>
 </ul>
+<br><br>
+<% end %>
+ 

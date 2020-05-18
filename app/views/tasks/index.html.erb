@@ -1,6 +1,6 @@
 <h1> List of tasks </h1>
-<ul>
 <% @tasks.each do |task| %>
+<ul style="list-style-position:inside; border-style: solid; border-width: 4px; border-radius: 15px; width: 300px; height: 250px; padding: 10px;" >  
          <li>Title of task:</li> 
         <%= task.title %> 
     <br><br>
@@ -23,5 +23,6 @@
   <%= link_to "Delete Task", task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete?" }%>
   <br><br>
 
-<% end %>   
 </ul>
+<br><br>
+<% end %>   
